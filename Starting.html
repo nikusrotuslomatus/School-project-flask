@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Everlasting summer</title>
+    <style>
+        body{
+        background: black;
+        color: white;
+        }
+.button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+</head>
+
+<body align="center">
+<h1>{{page.name}}</h1>
+<img src={{page.img}}> </img>
+
+<h2>{{page.description}}</h2>
+{% for  button in buttons%}
+
+<p></p>
+<button class="button"><span>
+<a href="/room/{{button[-1]}}">{{button[:-1]}}</a>
+</span>
+</button>
+    </p>
+       {% endfor %}
+
+<button class="button"><span>
+<a href="/update/{{page.id}}">+</a>
+
+</span>
+</button>
+</body>
+</html>

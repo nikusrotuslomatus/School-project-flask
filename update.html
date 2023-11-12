@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Everlasting summer</title>
+    <style>
+        body{
+        background: url(http://pm1.narvii.com/7326/17b72b6cbbb826bbb3dbd7f9706ba97ee2813631r1-2000-1250v2_uhq.jpg);
+        color: white;
+        font-size: 40px;
+        }
+.button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+</head>
+<body align="center">
+
+<form action="/update/{{page.id}}" method="POST">
+    <p> Введите через пробел название комнаты, её описание и ссылку на картинку</p>
+            <input type="text" name="content"  id="content" size="800">
+    <p>
+            <input type="submit" size="400" value="Добавить комнату" font-size = 20px>
+    </p>
+ </form>
+
+</body>
+</html>
